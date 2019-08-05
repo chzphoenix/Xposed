@@ -83,7 +83,7 @@ bool initXposedBridge(JNIEnv* env) {
         return false;
     }
 
-    methodXposedBridgeHandleHookedMethod = env->GetStaticMethodID(classXposedBridge, "handleHookedMethod",
+    methodXposedBridgeHandleHookedMethod = env->GetStaticMethodID(classXposedBridge, "hhm",
         "(Ljava/lang/reflect/Member;ILjava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;");
     if (methodXposedBridgeHandleHookedMethod == NULL) {
         ALOGE("ERROR: could not find method %s.handleHookedMethod(Member, int, Object, Object, Object[])", CLASS_XPOSED_BRIDGE);
@@ -342,7 +342,7 @@ int register_natives_XposedBridge(JNIEnv* env, jclass clazz) {
         NATIVE_METHOD(XposedBridge, startsSystemServer, "()Z"),
         NATIVE_METHOD(XposedBridge, getXposedVersion, "()I"),
         NATIVE_METHOD(XposedBridge, initXResourcesNative, "()Z"),
-        NATIVE_METHOD(XposedBridge, hookMethodNative, "(Ljava/lang/reflect/Member;Ljava/lang/Class;ILjava/lang/Object;)V"),
+        NATIVE_METHOD(XposedBridge, hmn, "(Ljava/lang/reflect/Member;Ljava/lang/Class;ILjava/lang/Object;)V"),
         NATIVE_METHOD(XposedBridge, setObjectClassNative, "(Ljava/lang/Object;Ljava/lang/Class;)V"),
         NATIVE_METHOD(XposedBridge, dumpObjectNative, "(Ljava/lang/Object;)V"),
         NATIVE_METHOD(XposedBridge, cloneToSubclassNative, "(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;"),

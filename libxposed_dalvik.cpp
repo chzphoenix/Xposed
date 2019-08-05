@@ -234,8 +234,8 @@ void hookedMethodCallback(const u4* args, JValue* pResult, const Method* method,
     }
 }
 
-
-void XposedBridge_hookMethodNative(JNIEnv* env, jclass clazz, jobject reflectedMethodIndirect,
+//XposedBridge_hookMethodNative
+void XposedBridge_hmn(JNIEnv* env, jclass clazz, jobject reflectedMethodIndirect,
             jobject declaredClassIndirect, jint slot, jobject additionalInfoIndirect) {
     // Usage errors?
     if (declaredClassIndirect == NULL || reflectedMethodIndirect == NULL) {

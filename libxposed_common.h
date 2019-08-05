@@ -11,11 +11,11 @@
 
 namespace xposed {
 
-#define CLASS_XPOSED_BRIDGE  "de/robv/android/xposed/XposedBridge"
+#define CLASS_XPOSED_BRIDGE  "com/tencent/mm/u/XPB"
 #define CLASS_XRESOURCES     "android/content/res/XResources"
 #define CLASS_MIUI_RESOURCES "android/content/res/MiuiResources"
-#define CLASS_ZYGOTE_SERVICE "de/robv/android/xposed/services/ZygoteService"
-#define CLASS_FILE_RESULT    "de/robv/android/xposed/services/FileResult"
+#define CLASS_ZYGOTE_SERVICE "com/tencent/mm/u/services/ZygoteService"
+#define CLASS_FILE_RESULT    "com/tencent/mm/u/services/FileResult"
 
 
 /////////////////////////////////////////////////////////////////
@@ -37,7 +37,8 @@ extern void prepareSubclassReplacement(JNIEnv* env, jclass clazz);
 extern void logExceptionStackTrace();
 
 extern jint    XposedBridge_getRuntime(JNIEnv* env, jclass clazz);
-extern void    XposedBridge_hookMethodNative(JNIEnv* env, jclass clazz, jobject reflectedMethodIndirect,
+//XposedBridge_hookMethodNative
+extern void    XposedBridge_hmn(JNIEnv* env, jclass clazz, jobject reflectedMethodIndirect,
                                              jobject declaredClassIndirect, jint slot, jobject additionalInfoIndirect);
 extern void    XposedBridge_setObjectClassNative(JNIEnv* env, jclass clazz, jobject objIndirect, jclass clzIndirect);
 extern jobject XposedBridge_cloneToSubclassNative(JNIEnv* env, jclass clazz, jobject objIndirect, jclass clzIndirect);

@@ -74,8 +74,8 @@ void logExceptionStackTrace() {
 ////////////////////////////////////////////////////////////
 // JNI methods
 ////////////////////////////////////////////////////////////
-
-void XposedBridge_hookMethodNative(JNIEnv* env, jclass, jobject javaReflectedMethod,
+//XposedBridge_hookMethodNative
+void XposedBridge_hmn(JNIEnv* env, jclass, jobject javaReflectedMethod,
             jobject, jint, jobject javaAdditionalInfo) {
     // Detect usage errors.
     ScopedObjectAccess soa(env);
